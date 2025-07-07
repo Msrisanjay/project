@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    <h1>welcome to inventory</h1>
+
+    <p>my name is {{name}} </p>
+    <br>
+
+    <p>my age is {{age}}</p>
+    
+    {% if role == "saiyan"%}
+    <h1>i am goku</h1>
+    {%else%}
+    <h1>goku</h1>
+    {%endif%}
+
+    {% endblock %}
+
+</body>
+</html>
