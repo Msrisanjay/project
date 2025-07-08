@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+
+    <h1>all products are here </h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>product_name</th>
+                <th>product_code</th>
+                <th>price</th>
+                <th>gst</th>
+                <th>book </th>
+            </tr>
+        </thead>
+
+        <tbody>
+        {% for product in all_product %}
+
+        <tr>
+            <td> {{product.product_name}}</td>
+            <td> {{product.product_code}}</td>
+            <td> {{product.price}}</td>
+            <td> {{product.gst}}</td>
+            <td> {{product.book}}</td>
+            <td>
+                <a href="{% url 'product_update' product.id %}" >
+                <button>update</button>
+                </a>
+            </td>
+            <td>
+               <a href="{% url 'product_delete' product.id %}" >
+                <button>delete</button>
+
+               </a>
+            </td>
+        </tr>
+        
+    
+
+
+        {% endfor %}
+    </tbody>
+
+    
+
+    </table>
+
+    
+
+    {% endblock %}
+</body>
+</html>
